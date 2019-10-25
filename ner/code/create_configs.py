@@ -26,7 +26,7 @@ additional_job_list = [
                         (1,5,0.05,0,1),
                         (1,5,0.01,0,1),
                         (1,1,0.01,0,1),
-                        (1,1,0.0,0,1) #baseline
+                        (1,1,0,0,1) #baseline
                         ]
 
 names = names + additional_names
