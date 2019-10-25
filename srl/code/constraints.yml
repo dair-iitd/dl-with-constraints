@@ -1,0 +1,18 @@
+- [['B-org'], ['NNP']]
+- [['B-tim'], ['NNP','CD','JJ']]
+- [['B-geo'], ['NNP']]
+- [['B-gpe'], ['JJ','NNS','NNP']]
+- [['B-per'], ['NNP']]
+- [['I-per'], ['NNP']]
+- [['I-org'], ['NNP']]
+- [['I-geo'], ['NNP','NNPS']]
+- [['I-tim'], ['CD','NNP','NN','IN']]
+- [['B-eve'], ['NNP']]
+- [['I-eve'], ['NNP']]
+- [['B-art'], ['NNP','NNPS','JJ','NNS']]
+- [['I-art'], ['NNP']]
+- [['I-gpe'], ['NNP']]
+- [['B-nat'], ['NNP']]
+- [['I-nat'], ['NNP']]
+    
+

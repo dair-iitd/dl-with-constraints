@@ -416,7 +416,7 @@ def step(model, loss, optimizer, clip_val = None,grad_norm = None):
     parameters = [p for p in model.parameters() if p.grad is not None]
     grad_norm_before_clip = compute_grad_norm(parameters)
     grad_norm_after_clip = grad_norm_before_clip
-    param_norm_before_clip = general_utils.compute_param_norm(parameters)
+    param_norm_before_clip = compute_param_norm(parameters)
  
     grad_before_rescale = rescale_gradients(model, grad_norm)
     #redundant code below. No need to use clip_grad_norm. It has already been clipped. 
