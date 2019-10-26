@@ -9,7 +9,6 @@ Download [this]() tar file containing all the data and untar in the same directo
 
 ```
 wget ()
-
 tar -zxvf resources.tar.gz
 ```
 
@@ -18,7 +17,6 @@ To clone the conda environment, run:
 
 ```
 conda env create -f environment.yml
-
 conda activate py2
 ```
 
@@ -35,3 +33,18 @@ This has also been adapted from a similar script in the baseline repo.
 ```
 python generate_commands_for_grid_search.py -log_dir ../logs -base_dir ../resources -dataset typenet -take_frac 0.05 -file_name 5p -save_model 1 -num_streams 1
 ```
+
+## Collate results
+Use `extract_scores_and_plot.py` to collate all the results. 
+
+```
+python extract_scores_and_plot.py -h # help
+python extract_scores_and_plot.py -input_dir ../logs_0.0500 -output_file <output_file_name_prefix>
+```
+
+It outputs a bunch of files prefixed `<output_file>` to their names. 
+
+`<output_file>_pivot.csv`:  contains summary
+
+`<output_file>_plots.pdf`: plots performance metric and learning rate as a function of number of iterations. 
+
