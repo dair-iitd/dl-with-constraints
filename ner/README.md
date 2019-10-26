@@ -9,7 +9,7 @@ The data has been taken from [here](https://gmb.let.rug.nl/data.php), preprocess
 Download [this](https://drive.google.com/open?id=1Qypy_JzocCqC1_-jPBf_5WKHqBVeY2lC) tar file containing all the data and untar in the same directory as code. This will create a folder named `data` parallel to the `code` folder. It contains the gmb data preprocessed for our code. It already contains all the 10 shuffles which were used to run the experiments.
 
 ```
-wget ()
+wget https://drive.google.com/open?id=1Qypy_JzocCqC1_-jPBf_5WKHqBVeY2lC
 
 tar -zxvf data.tar.gz
 ```
