@@ -6,7 +6,7 @@ Most of the files have been copied and modified from allennlp source code.
 ## Data
 The data has been taken from [here](https://gmb.let.rug.nl/data.php), preprocessed and archived. 
 
-Download [this]() tar file containing all the data and untar in the same directory as code. This will create a folder named `data` parallel to the `code` folder. It contains the gmb data preprocessed for our code. It already contains all the 10 shuffles which were used to run the experiments.
+Download [this](https://drive.google.com/open?id=1Qypy_JzocCqC1_-jPBf_5WKHqBVeY2lC) tar file containing all the data and untar in the same directory as code. This will create a folder named `data` parallel to the `code` folder. It contains the gmb data preprocessed for our code. It already contains all the 10 shuffles which were used to run the experiments.
 
 ```
 wget ()
