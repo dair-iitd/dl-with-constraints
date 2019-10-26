@@ -8,7 +8,6 @@ The data has been taken from the baseline repo and has been rearranged so that a
 Download [this](https://drive.google.com/open?id=1jntle0aCdXC-V7NKGxZ7Q9qExudWPuW9) tar file containing all the data and untar in the same directory as src. This will create a folder named `resources` parallel to the `src` folder.
 
 ```
-wget https://drive.google.com/open?id=1jntle0aCdXC-V7NKGxZ7Q9qExudWPuW9
 tar -zxvf resources.tar.gz
 ```
 
