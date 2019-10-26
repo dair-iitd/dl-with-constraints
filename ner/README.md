@@ -49,6 +49,28 @@ It should contain models for all the shuffles and all the training sizes for a g
 ```
 It creates a pickle file named: `inference_lr0.05_iter25_test0.pkl` for run on validation data and `inference_lr0.05_iter25_test1.pkl` for test data in the `<exp_dir>`
 
+##Collate results
+`dual_decomposition_inference.py collates all the results when `collate` flag is on and `exp_dirs` contains a list of all the directories (one per configuration of hyper-parameters)
+
+We need to first run it on `dev` data so that best hyper-parameters for `test` can be extracted. List of configuration names  (identified by the directory names) amongst which the best is chosen for the test is currently hard-coded (`cl_list` and `slmin50p_list`).  You may have to modify them before running.
+
+To run:
+```
+#For running on validation data
+python dual_constrained_inference_find_optima.py --test 0 --ddlr 0.05 --dditer 25 --exp_dirs <space_separarted_list_of_exp_dir> --collate 1 --output_file ../results/replicate
+#For running on Test data:
+python dual_constrained_inference_find_optima.py --test 1 --ddlr 0.05 --dditer 25 --exp_dirs <space_seperated_list_of_exp_dir> --output_file ../results/replicate
+```
+
+It outputs a bunch of files containing all the performance metrics. 
+
+`<output_file>_<ddlr>_<dditer>.csv`: Contains the best configuration for constrained learning and semi-supervision for all training sizes.
+
+`<output_file><ddlr>_<dditer>_test_<test>.csv-plot-inference.csv`: Use to plot performance as a function of #iterations of dual decomposition.
+
+`<output_file><ddlr>_<dditer>_test_<test>.csv-plot-summary_niterbest.csv`: Contains various metrics for each configuration before and after dual decomposition.
+
+
 
 
 
