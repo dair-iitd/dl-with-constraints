@@ -5,7 +5,7 @@ The code has been adapted from the baseline code available at: https://github.co
 ## Data
 The data has been taken from the baseline repo and has been rearranged so that all experiments can be replicated seamlessly.
 
-Download [this]() tar file containing all the data and untar in the same directory as src. This will create a folder named `resources` parallel to the `src` folder.
+Download [this](https://drive.google.com/open?id=1jntle0aCdXC-V7NKGxZ7Q9qExudWPuW9) tar file containing all the data and untar in the same directory as src. This will create a folder named `resources` parallel to the `src` folder.
 
 ```
 wget ()
