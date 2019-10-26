@@ -38,11 +38,11 @@ python create_configs.py --template_params_file ../configs/replicate/ner-pos-bs8
 ## Constrained Inference 
 After all the models have been trained, use `dual_decomposition_inference.py` script to run dual decomposition constrained inference procedure. For example:
 ```
-python dual_constrained_inference_find_optima.py -h #help
+python dual_decomposition_inference.py -h #help
 #For running on validation data
-python dual_constrained_inference_find_optima.py --test 0 --ddlr 0.05 --dditer 25 --exp_dirs <exp_dir>
+python dual_decomposition_inference.py --test 0 --ddlr 0.05 --dditer 25 --exp_dirs <exp_dir>
 #For running on Test data:
-python dual_constrained_inference_find_optima.py --test 1 --ddlr 0.05 --dditer 25 --exp_dirs <exp_dir>
+python dual_decomposition_inference.py --test 1 --ddlr 0.05 --dditer 25 --exp_dirs <exp_dir>
 
 #<exp_dir> : base serialization directory for a given configuration of hyper parameters as specified in the params_file while training the model. 
 It should contain models for all the shuffles and all the training sizes for a given configuration. e.g.: ../logs/replicate/ner-pos-gan-bs_8-sumpen-semi_false-wm_cm-ddoptim_sgd-ddlr_0.01-ifa_1-ifb_1-decay_0-cw_1
@@ -57,9 +57,9 @@ We need to first run it on `dev` data so that best hyper-parameters for `test` c
 To run:
 ```
 #For running on validation data
-python dual_constrained_inference_find_optima.py --test 0 --ddlr 0.05 --dditer 25 --exp_dirs <space_separarted_list_of_exp_dir> --collate 1 --output_file ../results/replicate
+python dual_decomposition_inference.py --test 0 --ddlr 0.05 --dditer 25 --exp_dirs <space_separarted_list_of_exp_dir> --collate 1 --output_file ../results/replicate
 #For running on Test data:
-python dual_constrained_inference_find_optima.py --test 1 --ddlr 0.05 --dditer 25 --exp_dirs <space_seperated_list_of_exp_dir> --output_file ../results/replicate
+python dual_decomposition_inference.py --test 1 --ddlr 0.05 --dditer 25 --exp_dirs <space_seperated_list_of_exp_dir> --output_file ../results/replicate
 ```
 
 It outputs a bunch of files containing all the performance metrics. 
