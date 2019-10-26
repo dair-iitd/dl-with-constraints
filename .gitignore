@@ -2,8 +2,11 @@
 */logs
 */resources
 */data
+*.tar.gz
+logs*
 
-
+*.csv
+*.pdf
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
