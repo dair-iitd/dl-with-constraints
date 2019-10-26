@@ -30,13 +30,17 @@ local data_dir = '../data/ner-pos/gmb';
 local train_data_file = 'train.txt.pkl';
 local validation_data_file = 'dev.txt.pkl';
 local unlabelled_train_data_file = 'train.txt.pkl';
-local semi_supervised=false;
+local semi_supervised=true;
 local which_mixer = 'cm';
-local dd_increase_freq_after = ${dd_increase_freq_after};
-local dd_increase_freq_by = ${dd_increase_freq_by};
-local ddlr = ${ddlr};
-local dd_decay_lr = ${dd_decay_lr}; 
+local backprop_after_xbatches=2;
+local min_pct_of_unlabelled=0.5;
+local dd_increase_freq_after = 1;
+local dd_increase_freq_by = 1;
+local ddlr = 0.01;
+local dd_decay_lr = 0; 
 {
+    "min_pct_of_unlabelled": min_pct_of_unlabelled,
+    "backprop_after_xbatches": backprop_after_xbatches,
     "dd_decay_lr": dd_decay_lr,
     "dd_increase_freq_after": dd_increase_freq_after,
     "dd_increase_freq_by": dd_increase_freq_by, 
@@ -48,7 +52,7 @@ local dd_decay_lr = ${dd_decay_lr};
     "unlabelled_train_data_file": unlabelled_train_data_file,
     "unlabelled_train_data_path": data_dir+'/shuffle'+shuffle_id+'/'+train_data_file,
     
-    "serialization_dir": '${exp_dir}/ner-pos-gan-bs_8-sumpen-semi_'+semi_supervised+'-wm_'+which_mixer+'-ddoptim_'+dd_optimizer+'-ddlr_'+ddlr +'-ifa_'+dd_increase_freq_after+ '-ifb_'+ dd_increase_freq_by + '-decay_'+ dd_decay_lr + '-cw_'+constraints_wt+'/shuffle'+shuffle_id+'/ts'+train_size,
+    "serialization_dir": '../logs/replicate/ner-pos-gan-bs_8-sumpen-minpct_50-semi_'+semi_supervised+'-wm_'+which_mixer+'-ddoptim_'+dd_optimizer+'-ddlr_'+ddlr +'-ifa_'+dd_increase_freq_after+ '-ifb_'+ dd_increase_freq_by + '-decay_'+ dd_decay_lr + '-cw_'+constraints_wt+'/shuffle'+shuffle_id+'/ts'+train_size,
     "cuda_device": cuda_device,
     "data_dir": '../data/ner-pos/gmb',
     "train_data_file":  train_data_file,
@@ -186,3 +190,4 @@ local dd_decay_lr = ${dd_decay_lr};
         "summary_interval": 100
     }
 }
+

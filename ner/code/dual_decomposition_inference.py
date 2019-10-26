@@ -41,7 +41,6 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
-from models import LstmTaggerAC
 from allennlp.nn import util as nn_util
 
 from allennlp.models.archival import archive_model, load_archive, CONFIG_NAME
@@ -79,6 +78,10 @@ parser.add_argument('--output_file',
 
 parser.add_argument('--test',
                     help="run on test data if 1 else on val data", type=int,
+                    default=0)
+
+parser.add_argument('--collate',
+                    help="should collate all the results?", type=int,
                     default=0)
 
 args = parser.parse_args()
@@ -190,7 +193,7 @@ with torch.no_grad():
 
 
 
-if True:
+if args.collate > 0:
     print("Collate everything in a table")
     exp_id_to_dir = {}
     table = None 

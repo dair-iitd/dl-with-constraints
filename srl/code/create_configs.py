@@ -59,6 +59,7 @@ if not os.path.exists(args.out_dir):
 fh = open(args.template_params_file)
 f0 = fh.read()
 fh.close()
+print('Creating {} config files in {}. Model logs will be in: {}'.format(len(all_jobs), args.out_dir, args.exp_dir))
 for this_job in all_jobs:
     this_job = list(itertools.chain(*this_job))
     f = copy.deepcopy(f0)
